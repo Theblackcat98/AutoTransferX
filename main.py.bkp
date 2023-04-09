@@ -1,0 +1,101 @@
+import os
+import shutil
+import tkinter as tk
+from tkinter import filedialog
+import json
+import logging
+
+
+class FileTransferApp:
+
+# Create logger
+    logger = logging.getLogger('file_transfer_logger')
+    logger.setLevel(logging.INFO)
+
+# Create file handler
+    handler = logging.FileHandler('file_transfer_log.txt')
+    handler.setLevel(logging.INFO)
+
+# Create formatter
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+
+# Add handler to logger
+    logger.addHandler(handler)
+
+    def __init__(self, master):
+        self.master = master
+        master.title("File Transfer App")
+        self.folder_pairs = []
+        
+        self.source_label = tk.Label(master, text="Source Folders:")
+        self.source_label.grid(row=0, column=0)
+
+        self.dest_label = tk.Label(master, text="Destination Folder:")
+        self.dest_label.grid(row=0, column=1)
+
+        self.add_button = tk.Button(master, text="Add Folder Pair", command=self.add_folder_pair)
+        self.add_button.grid(row=0, column=2)
+
+        self.move_button = tk.Button(master, text="Move Files", command=self.move_files)
+        self.move_button.grid(row=0, column=3)
+
+    def add_folder_pair(self):
+        source_folder = filedialog.askdirectory()
+        if source_folder:
+            dest_folder = filedialog.askdirectory()
+            if dest_folder:
+                is_automatic = tk.messagebox.askyesno("Automatic Folder Pair", "Is this an automatic folder pair?")
+                file_extensions = ""
+                if not is_automatic:
+                    file_extensions = tk.simpledialog.askstring("File Extensions", "Enter file extensions to check for (comma separated)")
+                folder_pair = (source_folder, dest_folder, is_automatic, file_extensions)
+                self.folder_pairs.append(folder_pair)
+                row = len(self.folder_pairs) + 1
+                source_var = tk.StringVar()
+                source_var.set(source_folder)
+                dest_var = tk.StringVar()
+                dest_var.set(dest_folder)
+                source_entry = tk.Entry(self.master, textvariable=source_var, state=tk.DISABLED)
+                source_entry.grid(row=row, column=0)
+                dest_entry = tk.Entry(self.master, textvariable=dest_var, state=tk.DISABLED)
+                dest_entry.grid(row=row, column=1)
+                check_var = tk.IntVar()
+                check_button = tk.Checkbutton(self.master, variable=check_var)
+                check_button.grid(row=row, column=2)
+                self.folder_pairs[-1] += (source_var, dest_var, check_var, source_entry, dest_entry, check_button)
+
+    def move_files(self):
+        for folder_pair in self.folder_pairs:
+            source_folder, dest_folder, is_automatic, file_extensions = folder_pair[:4]
+            if not os.path.isdir(dest_folder):
+                tk.messagebox.showerror("Error", "Destination folder is not valid.")
+                return
+            if is_automatic:
+                if not file_extensions:
+                    file_extensions = ".txt,.docx"
+                file_extensions = file_extensions.split(",")
+                for filename in os.listdir(source_folder):
+                    if any(filename.endswith(extension) for extension in file_extensions):
+                        shutil.move(os.path.join(source_folder, filename), dest_folder)
+            else:
+                if not file_extensions:
+                    tk.messagebox.showerror("Error", "Please specify file extensions for the selected folder pair.")
+                    return
+                file_extensions = file_extensions.split(",")
+                for filename in os.listdir(source_folder):
+                    if any(filename.endswith(extension) for extension in file_extensions):
+                        for pair in self.folder_pairs:
+                            if pair[0] == source_folder and pair[1] == dest_folder:
+                                check_var = pair[4]
+                                if check_var.get():
+                                    shutil.move(os.path.join(source_folder, filename), dest_folder)
+                tk.messagebox.showinfo("Success", "Files moved successfully.")
+
+        with open("folder_pairs.json", "w") as f:
+            json.dump(self.folder_pairs, f)
+
+
+root = tk.Tk()
+app = FileTransferApp(root)
+root.mainloop()
