@@ -149,7 +149,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](https://github.com/theblackcat98/AutoTransferX/blob/main/LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/Theblackcat98/AutoTransferX/blob/main/LICENSE.txt) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
