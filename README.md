@@ -189,18 +189,18 @@ main.py: The main entry point of the application, where the classes and modules 
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[forks-shield]: https://img.shields.io/github/forks/theblackcat98/AutoTransferX.svg?style=flat&logo=appveyor
+[forks-shield]: https://img.shields.io/github/forks/theblackcat98/AutoTransferX.svg?style=for-the-badge&logo=commonworkflowlanguage&color=DDB6F2&logoColor=D9E0EE&labelColor=302D41
 
 [forks-url]: https://github.com/theblackcat98/AutoTransferX/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/theblackcat98/AutoTransferX.svg?style=flat&logo=appveyor
+[stars-shield]: https://img.shields.io/github/stars/theblackcat98/AutoTransferX?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41
 
 [stars-url]: https://github.com/theblackcat98/AutoTransferX/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/theblackcat98/AutoTransferX.svg?style=flat&logo=appveyor
+[issues-shield]: https://img.shields.io/github/issues/theblackcat98/AutoTransferX?style=for-the-badge&logo=gitbook&color=B5E8E0&logoColor=D9E0EE&labelColor=302D41
 
 [issues-url]: https://github.com/theblackcat98/AutoTransferX/issues
 
-[license-shield]: https://img.shields.io/github/license/theblackcat98/AutoTransferX.svg?style=flat&logo=appveyor
+[license-shield]: https://img.shields.io/github/license/theblackcat98/AutoTransferX.svg?style=for-the-badge&logo=github&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41
 
 [license-url]: https://github.com/theblackcat98/AutoTransferX/blob/master/LICENSE.txt
