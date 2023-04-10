@@ -4,21 +4,24 @@
 [![MIT License][license-shield]][license-url]
 
 
-<a name="readme-top"></a>
+<div id="readme-top" align="center">
+  <br><br>
+  <a href="https://github.com/theblackcat98/autotransferx">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
+  <h3>AutoTransferX</h3>
 
-<br /><div align="center">  <a href="https://github.com/theblackcat98/autotransferx">    <img src="images/logo.png" alt="Logo" width="80" height="80">  </a>
-
-<h3 align="center">AutoTransferX</h3>
-<img align="center" src="https://img.shields.io/badge/BlackCat-Designs-blueviolet"> <hr>
-
+  <a href="https://github.com/Theblackcat98">
+    <img align="center" src="https://img.shields.io/badge/BlackCat-Designs-blueviolet">
+  </a>
 
 <p align="center">
     AutoTransfer is a lightweight and easy-to-use program designed to automatically transfer files between folders based on their file extension. Simply specify a source folder to watch and a destination folder to transfer files to, and AutoTransfer will do the rest. With support for multiple file extensions and the ability to customize transfer settings, AutoTransfer makes it easy to manage and organize your files without manual intervention. Whether you're a developer looking to automate file transfers for a project or a user looking to simplify your file management process, AutoTransfer is the perfect solution.
-    <br />
+    <br>
     <a href="https://github.com/theblackcat98/autotransferx"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
+    <br>
+    <br>
     <a href="https://github.com/theblackcat98/AutoTransferX">View Demo</a>
     ·
     <a href="https://github.com/theblackcat98/AutoTransferX/issues">Report Bug</a>
@@ -31,14 +34,12 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
+    <li><a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
+    <li><a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
@@ -148,7 +149,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/Theblackcat98/AutoTransferX/blob/main/LICENSE.txt) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
