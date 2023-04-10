@@ -10,7 +10,7 @@
 <br /><div align="center">  <a href="https://github.com/theblackcat98/autotransferx">    <img src="images/logo.png" alt="Logo" width="80" height="80">  </a>
 
 <h3 align="center">AutoTransferX</h3>
-<h3 align="center">[https://img.shields.io/badge/BlackCat-Designs-blueviolet]</h3>
+<img align="center" src="https://img.shields.io/badge/BlackCat-Designs-blueviolet"> <hr>
 
 
 <p align="center">
